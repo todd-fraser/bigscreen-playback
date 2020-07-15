@@ -1,0 +1,65 @@
+[
+  {
+    "type": "lead_story",
+    "duration": 15,
+    "title": "CHANGED Dev XHR lead story",
+    "byLine": "Read more on Nowehere.com.",
+    "tagLine": "Politics",
+    "photoSrc": "https://cdn2.newsok.biz/cache/sq280-b91f0c6ef898cdf1a0a8da757ec570df.jpg",
+    "content": "content"
+  },
+  {
+    "type": "billboard",
+    "src": "/static_assets/images/twitter_bg.png",
+    "duration": 5,
+    "title": "Twitter BG loaded",
+    "content": "ads"
+  },
+  {
+    "type": "video",
+    "video_url": "https://opubco-video.s3.amazonaws.com/upload/bigscr-thunder-russ-youtube-720p-3mb-fast.mov",
+    "branding": "bleed",
+    "bumper": "oklahoman",
+    "duration": 20,
+    "title": "Russ",
+    "content": "content"
+  },
+  {
+    "type": "video",
+    "video_url": "https://opubco-video.s3.amazonaws.com/upload/read-local.mp4",
+    "branding": "bleed",
+    "duration": 30,
+    "title": "ok how dms ",
+    "content": "content"
+  },
+  {
+    "type": "billboard",
+    "src": "http://s3.amazonaws.com/content.newsok.com/newsok/bigscreen/Career_Fair_B2C_2019-03-18_DVS.jpg",
+    "duration": 15,
+    "title": "Career Fair Apr 2019",
+    "content": "ads"
+  },
+  {
+    "type": "billboard",
+    "src": "http://s3.amazonaws.com/content.newsok.com/newsok/bigscreen/canterbury_dvs_1280x640.jpg",
+    "duration": 15,
+    "title": "position 3 - cantebury live",
+    "content": "ads"
+  },
+  {
+    "type": "billboard",
+    "src": "http://s3.amazonaws.com/content.newsok.com/newsok/bigscreen/case_generic_dvs_3.5.19.jpg",
+    "duration": 15,
+    "title": "Case Generic Mar",
+    "content": "ads"
+  },
+  {
+    "type": "lead_story",
+    "duration": 15,
+    "title": "OKC loses &#039;two titans of the council&#039; as Shadid, Salyer retire",
+    "byLine": "Read more on NewsOK.com.",
+    "tagLine": "Politics",
+    "photoSrc": "https://cdn2.newsok.biz/cache/sq280-b91f0c6ef898cdf1a0a8da757ec570df.jpg",
+    "content": "content"
+  }
+]

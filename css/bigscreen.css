@@ -1,0 +1,756 @@
+body {
+    background: black;
+    margin: 0;
+}
+#fade, #bumper {
+    width: 1280px;
+    height: 640px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+    /* background: rgb(55, 15, 55); */
+    background: black;
+}
+.faderIn {
+    animation-name: faderIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes faderIn {
+    0% {
+        opacity: 0; 
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+.faderOut {
+    animation-name: faderOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+@keyframes faderOut {
+    0% {
+        opacity: 1; 
+    }
+    100% {
+        opacity: 0;
+    }
+}
+#bumper {
+    z-index: 2;
+    display: none;
+}
+#screen {
+    width: 1280px;
+    height: 640px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1
+}
+.video {
+    width: 1138px;
+    height: 640px;
+    padding: 0 71px;
+    background: url(../static_assets/images/video_bg.png);
+}
+.video.oklahoman, .tweetWrapper {
+    width: 1280px;
+    height: 560px;
+    background: url(../static_assets/images/video_bg_branded.png);
+}
+.video.bleed {
+    width: 1280px;
+    height: 720px;
+    padding: 0;
+    margin-top: -40px;
+}
+#ticker, #ticker2 {
+    width: 1280px;
+    height: 80px;
+    color: #0099ff;
+    line-height: 80px;
+    font-size: 54px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+#scroller, #scrollerStocks {
+    position: absolute;
+    left: 1280px;
+    /* left: 640px; */
+    animation-name: scroller;
+    animation-duration: 150s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    }
+@keyframes scroller {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-105%); }
+    }    
+#scroller span {
+    background: #ad1400;
+    color: white;
+    padding: 0 25px;
+    font-size: 48px;
+    line-height: 80px;
+    display: inline-block;
+    position: relative;
+    bottom: 3px;
+    margin-right: 6px;
+}
+.scoreboard #livePulse {
+    position: absolute;
+    top: 88px;
+    right: 112px;
+    width: 200px;
+    height: 95px;
+    background: green;
+    background: url(../static_assets/images/scoreboard_live.png) no-repeat;
+}
+.scoreboard #livePulse div {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    background: red;
+    right: 26px;
+    top: 26px;
+    -webkit-animation-name: live;
+    -webkit-animation-duration: 1.0s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-name: live;
+    animation-duration: 1.0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.scoreboard .tickerTitle {
+    position: absolute;
+    z-index: 500;
+    top: 580px;
+    background: #0099e6;
+    color: white;
+    padding: 0 25px;
+    font-size: 42px;
+    display: inline-block;
+    margin-right: 6px;
+    font-weight: bold;
+    height: 60px;
+    font-size: 42px;
+    line-height: 70px;
+}
+@-webkit-keyframes live {
+    from {opacity: 1.0;}
+    to {opacity: 0;}
+}
+@keyframes live {
+    from {opacity: 1.0;}
+    to {opacity: 0;}
+}
+.scoreboard #tickerWrapper2 #ticker2 {
+    background: #333;
+    color: #99ca3c;
+    text-transform: uppercase;
+}
+.scoreboard #tickerWrapper2 #ticker2 em {
+    font-style: normal;
+    color: white;
+}
+.scoreboard #tickerWrapper2 strong {
+    background: #666;
+    color: white;
+    padding: 0 25px;
+    font-size: 42px;
+    display: inline-block;
+    position: relative;
+    margin-right: 6px;
+}
+#tickerWrapper2 {
+    position: absolute;
+    top: 580px;
+}
+#ticker2 {
+    height: 60px;
+    font-size: 42px;
+    line-height: 70px;
+}
+#ticker2 .up {
+    color: #99cc33;
+}
+#ticker2 .down {
+    color: #cc3332;
+}
+.tweet {
+    background: url(../static_assets/images/twitter_bg.png);
+    width: 1280px;
+    height: 560px;
+    position: absolute;
+    top: 80px;
+    font-family: Helvetica, sans-serif;
+}
+.tweet .tweetBody {
+    padding: 87px 250px 0 250px;
+    height: 208px;
+    font-size: 42px;
+    line-height: 50px;
+}
+.tweet .tweetAuthor {
+    margin: 0 auto;
+    padding-top: 5px;
+    width: 780px;
+    font-size: 36px;
+    letter-spacing: -1px;
+    text-align: right;
+    border-top: 2px solid #CCC;
+}
+.tweet .fadeInTweet {
+    position: relative;
+    z-index: 1;
+    display: none;
+}
+.tweet .tweetAuthor span {
+    font-size: 26px;
+    color: #999;
+}
+#slideCounter {
+    position: absolute;
+    z-index: 100;
+    font-size: 48px;
+    color: white;
+    padding: 30px;
+    font-family: Helvetica, sans-serif;
+    text-shadow: 0px 1px 2px #000;
+    opacity: 1;
+}
+.visible {
+    animation-name: slideCounter;
+    animation-duration: .5s;
+    animation-direction: reverse;
+    animation-fill-mode: both;
+}
+@keyframes slideCounter {
+    0% {
+        opacity: 0; 
+    }
+   100% {
+        opacity: 1;
+    }
+}
+.gallery div {
+    position: absolute;
+    width: 1280px;
+    height: 640px;
+    text-align: center;
+    background: black;
+}
+.gallery table {
+    color: #FFF;
+    padding: 150px 80px 0 217px;
+    line-height: 74px;
+    font-size: 82px;
+    font-family: Helvetica, sans-serif;
+}
+.gallery .title {
+    display: none;
+    position: relative;
+}
+.weather {
+    color: #FFF;
+    width: 850px;
+    padding: 140px 215px 0 180px;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    background: url(../static_assets/images/5_day_forecast.png);
+    width: 1280px;
+    height: 640px;
+}
+.weather.current {
+    color: #FFF;
+    width: 850px;
+    padding: 233px 220px 0 150px;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    background: url(../static_assets/images/current_conditions.png);
+    width: 1280px;
+    height: 640px;
+}
+.weather .column {
+    width: 175px;
+    float: left;
+    text-align: center;
+    margin-right: 10px;
+    opacity: 0;
+    position: relative;
+}
+.weather .columnLeft {
+    width: 325px;
+    float: left;
+    text-align: center;
+    margin-right: 5px;
+    opacity: 0;
+    position: relative;
+}
+.weather .columnRight {
+    width: 618px;
+    float: left;
+}
+.weather .columnRight div {
+    font-size: 56px;
+    margin-left: 34px;
+    opacity: 0;
+    position: relative;
+    line-height:1.16em;
+}
+.weather .columnRight div small{
+font-size:70%;
+}
+.weather .day {
+    font-size: 48px;
+    height: 65px;
+    line-height: 65px;
+}
+.weather .day.sat, .weather .day.sun {
+    background: green;
+}
+.weather .pop_pct {
+    opacity: 0.6;
+    font-weight: normal;
+    font-size: 46px;
+    height: 60px;
+    line-height: 60px;
+}
+.weather .icon {
+    position: relative;
+    top: -5px;
+    width: 100% !important;
+    margin: 0 auto -47px auto;;
+}
+.weather .high {
+    font-size: 80px;
+    letter-spacing: -2px;
+    position: relative;
+    line-height: .75em;
+}
+.weather.current .high {
+    font-size: 155px;
+    font-weight: normal;
+    position: relative;
+    letter-spacing: -5px;
+    top: -30px;
+}
+.weather .low {
+    font-size: 64px;
+    opacity: 0.6;
+    font-weight: normal;
+    line-height: 1.75em;
+}
+.paperWrapper {
+    width: 1280px;
+    height: 640px;
+    background: url(../static_assets/images/todays_paper_master_bg.png);
+}
+.newspaper {
+    width: 288px;
+    position: absolute;
+    right: 130px;
+    top: 100px;
+    box-shadow: 20px 20px 20px rgba(0,0,0,0.6);
+    -webkit-transform: rotate(7deg) scale(1.5,1.5); /* Chrome, Safari, Opera */
+    -webkit-transition-timing-function: ease-in-out;
+    -webkit-transition-delay: 0.5s;
+    -webkit-transition-duration: 1s;
+    -webkit-transition-property: all;
+    transform: rotate(7deg) scale(1.5,1.5); /* Chrome, Safari, Opera */
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.5s;
+    transition-duration: 1s;
+    transition-property: all;
+}
+.newspaperTransition {
+    box-shadow: 10px 10px 3px rgba(0,0,0,0.6);
+    -webkit-transform: rotate(4.5deg) scale(1.1,1.1); /* Chrome, Safari, Opera */
+    transform: rotate(4.5deg) scale(1.1,1.1); /* Chrome, Safari, Opera */
+}
+.paperHeadlines {
+    width: 100%;
+    padding: 325px 440px 0 185px;
+    color: white;
+    font-size: 65px;
+    line-height: 65px;
+    letter-spacing: -2px;
+    font-family: Helvetica, sans-serif;
+}
+.instagramWrapper {
+    width: 1280px;
+    height: 640px;
+    background: url(../static_assets/images/instagram_master.jpg);
+}
+.instagram .photo {
+    position: absolute;
+    display: none;
+    top: 110px;
+    right: 390px;
+    width: 500px;
+    height: 500px;
+}
+.instagram .instagramHandle {
+    background: url(../static_assets/images/instagram_master_shadow.png) no-repeat bottom right;
+    display: none;
+    padding-bottom: 14px;
+    right: 345px;
+    top: 510px;
+    position: absolute;
+}
+.instagram .instagramHandle div {
+    background: rgba(0, 153, 230, 0.85);
+    padding: 0 20px;
+    height: 60px;
+    line-height: 60px;
+    color: #FFF;
+    font-family: Helvetica, sans-serif;
+    font-size: 32px;
+}
+.instagram .instagramHash {
+    color: white;
+    font-size: 50px;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    left: 415px;
+    height: 78px;
+    line-height: 78px;
+    z-index: 20;
+    top: 0px;
+    opacity: 0;
+}
+.stocksWrapper {
+    width: 1280px;
+    height: 640px;
+    background: url(../static_assets/images/stocks_bg.jpg);
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
+.stocksWrapper .stocks {
+    padding: 135px 210px;
+}
+.stocks .index {
+    height: 80px;
+    line-height: 75px;
+    font-size: 64px;
+    padding: 0 30px 0 20px;
+    overflow: hidden;
+}
+.stocks .index span {
+    float: right;
+}
+.stocks .index span img {
+    margin: -45px 0 0 10px;
+}
+.stocks .closing {
+    clear: both;
+    height: 50px;
+    line-height: 55px;
+    font-size: 32px;
+    text-align: right;
+    margin-bottom: 10px;
+    padding: 0 15px;
+}
+.stocksWrapper .updated {
+    font-size: 52px;
+    font-weight: bold;
+    position: absolute;
+    right: 170px;
+    height: 78px;
+    line-height: 88px;
+    letter-spacing: -1px;
+}
+.stocksWrapper .updated span {
+    color: #0099ff;
+    font-size: 28px;
+    position: relative;
+    bottom: 8px;
+    letter-spacing: 0px;
+    font-weight: normal;
+}
+.stockSponsor {
+    width: 997px;
+    height: 502px;
+    position: absolute;
+    top: 78px;
+    left: 142px;
+}
+.stockSponsorTicker {
+    width: 391px;
+    height: 65px;
+    position: absolute;
+    z-index: 3;
+    top: 575px;
+}
+.scoreboard.bballsch {
+    width: 1280px;
+    height: 640px;
+    background: url(../static_assets/images/basketball_schedule.jpg);
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
+.scoreboard .sched {
+    width: 810px;
+    height: 102px;
+    margin: 40px auto;
+    font-size: 48px;
+    background: url(../static_assets/images/schedule_row.png) no-repeat;
+    line-height: 95px;
+    padding: 0 40px 0 20px;
+}
+.scoreboard .sched span {
+    float: right;
+}
+.scoreboard.nba, .scoreboard.ncaab, .scoreboard.vbballb, .scoreboard.vfball, .scoreboard.ncaaf, .scoreboard.nfl {
+    width: 1280px;
+    height: 640px;
+    background: url(../static_assets/images/thunder_scoreboard_bg.jpg);
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
+.scoreboard.vbballb {
+    background: url(../static_assets/images/varsity_scoreboard_bg.jpg);
+}
+.scoreboard.vfball, .scoreboard.ncaaf, .scoreboard.nfl {
+    background: url(../static_assets/images/football_scoreboard.jpg);
+}
+.scoreboard .inner {
+    width: 996px;
+    margin: 0 auto;
+}
+.scoreboard .status {
+    height: 78px;
+    line-height: 88px;
+    font-size: 52px;
+    font-weight: bold;
+    padding: 0 30px;
+}
+.scoreboard .status span {
+    float: right;
+}
+.scoreboard .team.away {
+    clear: both;
+}
+.scoreboard .team .city {
+    margin: 62px 0 0 93px;
+    background: #333;
+    font-size: 28px;
+    height: 50px;
+    line-height: 56px;
+    padding: 0 10px;
+    width: 400px;
+}
+.scoreboard .team.home .city {
+    margin-top: 30px;
+}
+.scoreboard.nfl .team .city, .scoreboard.ncaaf .team .city, .scoreboard.vfball .team .city {
+    margin-top: 72px;
+}
+.scoreboard.nfl .team.home .city, .scoreboard.ncaaf .team.home .city, .scoreboard.vfball .team.home .city {
+    margin-top: 30px;
+}
+.scoreboard .team .city span, .scoreboard .team .score span {
+    float: right;
+}
+.scoreboard .team .score {
+    margin: 0 88px 0 58px;
+    font-size: 80px;
+    height: 110px;
+    line-height: 125px;
+    padding: 0 20px;
+    letter-spacing: -4px;
+    font-weight: bold;
+    line-height: 1.35em;
+}
+.scoreboard.nfl .team .score, .scoreboard.ncaaf .team .score, .scoreboard.vfball .team .score {
+    line-height: 115px;
+}
+.leadStoryWrapper {
+    width: 1280px;
+    height: 640px;
+    background: url(../static_assets/images/lead_story_bg.png);
+    font-family: Helvetica, sans-serif;
+    color: white;
+}
+.leadStory {
+    width: 990px;
+    padding: 260px 90px 0 200px;
+}
+.leadStory img {
+    float: left;
+    margin: 0 30px 200px 0;
+}
+.leadStory .title {
+    font-size: 72px;
+    line-height: 68px;
+    font-weight: bold;
+}
+.leadStory .byLine {
+    font-size: 36px;
+    margin-top: 30px;
+}
+.leadStory .tagLine {
+    position: absolute;
+    height: 100px;
+    line-height: 94px;
+    font-size: 84px;
+    font-weight: bold;
+    background: #0099e6;
+    padding: 0 60px 0 20px;
+    top: 100px;
+    left: 106px;
+    border-right: 20px solid #333;
+}
+.leadStory .tagLine .shadow {
+    position: absolute;
+    height: 16px;
+    width: 410px;
+    background: url(../static_assets/images/default_tagline_bg.png) no-repeat;
+    bottom: -16px;
+    left: 0;
+}
+.leadStoryWrapper .leadStory img {
+    width: 180px !important;
+}
+.leadStory .tagLine.Breaking {
+    background: #CC0000;
+}
+.leadStory .tagLine.Breaking .shadow {
+    background: url(../static_assets/images/lead_story_breaking_shadow.png) no-repeat;
+}
+.leadStoryWrapper.facebook {
+    background: url(../static_assets/images/facebook_bg.png);
+}
+.leadStoryWrapper.facebook .byline {
+    color: #cdd8ee;
+}
+.leadStoryWrapper.facebook .byline strong {
+    color: #fff;
+    font-weight: bold;
+}
+.leadStory .tagLine.Facebook, .leadStory .tagLine.facebook {
+    display: none;
+}
+.leadStoryWrapper.facebook .leadStory .byLine {
+    font-size: 36px;
+    margin-top: 0px;
+    position: absolute;
+    top: 472px;
+    width: 785px;
+    text-align: right;
+}
+.leadStoryWrapper.facebook .leadStory {
+    width: 790px;
+    padding: 200px 178px 0 312px;
+}
+.leadStoryWrapper.facebook .leadStory .title {
+    font-size: 42px;
+    line-height: 46px;
+    font-weight: normal;
+    color: black;
+}
+.leadStoryWrapper.weather {
+    padding: 0;
+}
+.scheduleWrapper {
+    width: 1280px;
+    height: 640px;
+    background: url(../static_assets/images/studio_schedule_bg.png);
+}
+.scheduleWrapper ul {
+    color: #ccc;
+    font-family: Helvetica, sans-serif;
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    list-style: none;
+    margin: 0 60px 0 190px;
+    padding: 130px 0 0 0;
+    position: relative;
+    text-rendering: optimizeLegibility;
+    z-index: 1;
+}
+.scheduleWrapper li {
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    margin-bottom: 25px;
+    overflow: hidden;
+    padding: 0 0 25px 200px;
+    position: relative;
+}
+.scheduleWrapper li:last-child {
+    border-bottom: none;
+}
+.scheduleWrapper li.active {
+    color: #fff;
+}
+.scheduleWrapper .pointer {
+    position: absolute;
+    left: 122px;
+    top: 80px;
+    -webkit-transition: top .75s ease-in-out;
+    transition: top .75s ease-in-out;
+    }
+.scheduleWrapper li span {
+    color: #0099ff;
+    font-weight: normal;
+    float: left;
+    margin-left: -200px;
+    width: 180px;
+    text-align: right;
+}
+.scheduleWrapper .event-img {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    opacity: 0;
+    -webkit-transition: opacity .2s ease-in-out;
+    transition: opacity .75s ease-in-out;
+}
+.scheduleWrapper .event-img.active {
+    opacity: .75;
+}
+.scheduleWrapper.items-3 ul, .scheduleWrapper.items-2 ul, .scheduleWrapper.items-1 ul {
+    font-size: 50px;
+}
+.scheduleWrapper.items-3 li, .scheduleWrapper.items-2 li, .scheduleWrapper.items-1 li {
+    padding-left: 230px;
+}
+.scheduleWrapper.items-3 li span, .scheduleWrapper.items-2 li span, .scheduleWrapper.items-1 li span {
+    margin-left: -230px;
+    width: 210px;
+}
+/* Bigscreen styles */
+.pull-right{float:right;}
+.bigscreen_wrapper{position:absolute;top:0;left:0;color: white;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;width:1280px;height:640px;background:url('../static_assets/images/elections_bg.jpg') no-repeat;}
+.bigscreen_election_results .electionresult .tickerCandidate span{padding-left:20px;}
+.bigscreen_election_results .tickerCandidate sup{ line-height:20px;}
+.bigscreen_election_results{position:relative;margin-left:160px;width:960px; height:640px;}
+.bigscreen_election_results .updated {font-size: 52px;font-weight: bold; position:absolute; right:0px; height: 78px; line-height:30px;letter-spacing: -1px;}
+.bigscreen_election_results .updated  span {color: #0099ff;font-size: 28px; position:relative; bottom: 8px;letter-spacing: 0px;font-weight: normal;}
+.bigscreen_election_results h2 {color:#fff;font-size: 28px;position: relative;bottom: 8px;letter-spacing: 0px;font-weight: normal;line-height:50px;}
+.bigscreen_election_results .tickerCandidate{padding-top:10px;}
+.bigscreen_election_results .tickerCandidate, .bigscreen_election_results .tickerCandidate.DEM{font-size:58px;height:105px; width:870px;background: url('../static_assets/images/elections_banner.png') no-repeat;background-position:0 5px;}
+.bigscreen_election_results .tickerCandidate.REP{background: url('../static_assets/images/elections_banner-republican.png') no-repeat;background-position:0 5px;}
+.bigscreen_election_results .tickerCandidate.LIB{background: url('../static_assets/images/elections_banner-libertarian.png') no-repeat;background-position:0 5px;}
+.bigscreen_election_results table{margin:20px 45px 0; width:90%; border: none;}
+.bigscreen_election_results .reporting {font-size: 30px;text-align: center;margin: 0 !important;padding:0 !important;}
+
+
+
+
+
+
+

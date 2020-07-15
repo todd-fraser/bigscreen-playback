@@ -1,0 +1,19 @@
+
+
+screen.innerHTML = "<img onload='$(\"#fade\").fadeOut(fadeInOutTime); timeout = setTimeout(fadeOut, "+(data.duration*1000)+"-fadeInOutTime); trackView(\""+data.content+"\", \""+data.title+"\", "+data.duration+");' style='width: 100%;' src='./screen/ads/"+localImage[0]+"' />");
+
+
+
+.faderIn {
+    animation-name: faderIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes faderIn {
+    0% {
+        opacity: 0%; 
+    }
+   100% {
+        opacity: 100%;
+    }
+  }
