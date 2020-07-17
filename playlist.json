@@ -2,7 +2,7 @@
   {
     "type": "lead_story",
     "duration": 15,
-    "title": "CHANGED Dev XHR lead story",
+    "title": "Netlify Auto Publish Playlist",
     "byLine": "Read more on Nowehere.com.",
     "tagLine": "Politics",
     "photoSrc": "https://cdn2.newsok.biz/cache/sq280-b91f0c6ef898cdf1a0a8da757ec570df.jpg",
@@ -17,7 +17,7 @@
   },
   {
     "type": "video",
-    "video_url": "https://opubco-video.s3.amazonaws.com/upload/bigscr-thunder-russ-youtube-720p-3mb-fast.mov",
+    "video_url": "https://bigscreen-admin-2020.s3.amazonaws.com/1594917653823.mp4",
     "branding": "bleed",
     "bumper": "oklahoman",
     "duration": 20,
